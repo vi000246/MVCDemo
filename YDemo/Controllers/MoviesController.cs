@@ -12,12 +12,24 @@ namespace YDemo.Controllers
 {
     public class MoviesController : Controller
     {
-        private MovieDBContext db = new MovieDBContext();
+        private IMovieRepository<Movie> repo;
+
+        public MoviesController()
+        : this(new MovieRepository<Movie>(new MovieDBContext()))
+        {
+        }
+
+        public MoviesController(IMovieRepository<Movie> inRepo)
+        {
+            repo = inRepo;
+        }
+
+        //private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
         public ActionResult Index()
         {
-            return View(db.Movies.ToList());
+            return View(repo.Reads().ToList());
         }
 
         // GET: Movies/Details/5
@@ -27,7 +39,7 @@ namespace YDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movie movie = db.Movies.Find(id);
+            Movie movie = repo.Read(x => x.ID == id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -50,8 +62,10 @@ namespace YDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Movies.Add(movie);
-                db.SaveChanges();
+                //db.Movies.Add(movie);
+                //db.SaveChanges();
+                repo.Create(movie);
+                repo.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +79,7 @@ namespace YDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movie movie = db.Movies.Find(id);
+            Movie movie = repo.Read(x => x.ID == id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -82,8 +96,10 @@ namespace YDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(movie).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(movie).State = EntityState.Modified;
+                //db.SaveChanges();
+                repo.Update(movie);
+                repo.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(movie);
@@ -96,7 +112,7 @@ namespace YDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movie movie = db.Movies.Find(id);
+            Movie movie = repo.Read(x => x.ID == id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -109,19 +125,12 @@ namespace YDemo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Movie movie = db.Movies.Find(id);
-            db.Movies.Remove(movie);
-            db.SaveChanges();
+            Movie movie = repo.Read(x => x.ID == id);
+            //db.Movies.Remove(movie);
+            //db.SaveChanges();
+            repo.Delete(movie);
+            repo.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
