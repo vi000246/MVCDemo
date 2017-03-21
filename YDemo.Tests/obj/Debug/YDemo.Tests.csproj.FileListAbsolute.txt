@@ -69,3 +69,12 @@ c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\obj\Debug\YDemo.Tests.csprojResolveAssemblyReference.cache
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\obj\Debug\YDemo.Tests.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\obj\Debug\YDemo.Tests.pdb
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\System.Web.Http.dll
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\System.Web.Http.xml
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\zh-Hant\System.Web.Http.resources.dll
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\zh-Hant\System.Net.Http.Formatting.resources.dll

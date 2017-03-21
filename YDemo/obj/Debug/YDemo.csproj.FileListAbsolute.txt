@@ -98,7 +98,6 @@ c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo\bin\zh-Ha
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo\obj\Debug\YDemo.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo\obj\Debug\YDemo.pdb
-C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\obj\Debug\YDemo.csprojResolveAssemblyReference.cache
 C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\bin\System.Net.Http.Formatting.dll
 C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\bin\System.Web.Http.dll
 C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\bin\System.Web.Http.WebHost.dll
