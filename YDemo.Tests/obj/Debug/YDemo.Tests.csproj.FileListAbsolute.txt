@@ -14,7 +14,6 @@ c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\YDemo.Tests.dll.config
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\YDemo.Tests.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\YDemo.Tests.pdb
-c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\Newtonsoft.Json.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\System.Web.Helpers.dll
@@ -51,7 +50,6 @@ c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\EntityFramework.xml
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
-c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\zh-Hant\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\zh-Hant\System.Web.Helpers.resources.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
 c:\users\vi000\onedrive\文件\visual studio 2015\Projects\YDemo\YDemo.Tests\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
