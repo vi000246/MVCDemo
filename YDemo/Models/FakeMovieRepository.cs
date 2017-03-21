@@ -9,7 +9,7 @@ namespace YDemo.Models
     public class FakeMovieRepository<TEntity> : IMovieRepository<TEntity>
         where TEntity : class,new()
     {
-        private List<TEntity> data;
+        public List<TEntity> data;
 
         //傳入一個測試用的list物件
         public FakeMovieRepository(List<TEntity> obj)
@@ -19,18 +19,18 @@ namespace YDemo.Models
 
         public void Create(TEntity entity)
         {
-            throw new NotImplementedException();
+            data.Add(entity);
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            data.Remove(entity);
         }
 
 
         public TEntity Read(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return data.AsQueryable<TEntity>().Where(predicate).FirstOrDefault();
         }
 
         public IQueryable<TEntity> Reads()
@@ -48,9 +48,14 @@ namespace YDemo.Models
             throw new NotImplementedException();
         }
 
-        IQueryable<TEntity> IMovieRepository<TEntity>.Reads()
+        public void Update(TEntity entity, Expression<Func<TEntity, object>>[] updateProperties)
         {
             throw new NotImplementedException();
+        }
+
+        IQueryable<TEntity> IMovieRepository<TEntity>.Reads()
+        {
+            return data.AsQueryable();
         }
     }
 }
