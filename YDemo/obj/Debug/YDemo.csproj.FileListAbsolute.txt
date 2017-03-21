@@ -107,4 +107,3 @@ C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\bin\Syste
 C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
 C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\bin\zh-Hant\System.Web.Http.resources.dll
 C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
-C:\Users\vi000\OneDrive\文件\Visual Studio 2015\Projects\YDemo\YDemo\obj\Debug\YDemo.csprojResolveAssemblyReference.cache

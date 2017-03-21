@@ -13,18 +13,29 @@ namespace YDemo.Controllers
 {
     public class movieAPIController : ApiController
     {
-        private MovieDBContext db = new MovieDBContext();
+        private IMovieRepository<Movie> repo;
+
+        public movieAPIController()
+        : this(new MovieRepository<Movie>(new MovieDBContext()))
+        {
+        }
+
+        public movieAPIController(IMovieRepository<Movie> inRepo)
+        {
+            repo = inRepo;
+        }
+        //private MovieDBContext db = new MovieDBContext();
 
         //取得所有電影
         public IEnumerable<Movie> GetAllMovies()
         {
-            return db.Movies;
+            return repo.Reads();
         }
 
         //搜尋電影 by id
         public IHttpActionResult GetMovie(int id)
         {
-            var movie = db.Movies.Find(id);
+            var movie = repo.Read(x => x.ID == id);
             if (movie == null)
             {
                 return NotFound();
@@ -41,7 +52,7 @@ namespace YDemo.Controllers
         /// <returns></returns>
         public IEnumerable<Movie> GetProductsByCategory(string Genre)
         {
-            IEnumerable<Movie> movies = db.Movies;
+            IEnumerable<Movie> movies = repo.Reads();
             var cProducts = movies.Where(p => p.Genre == Genre);
             if (cProducts.FirstOrDefault<Movie>() != null)
                 return cProducts;
@@ -51,7 +62,7 @@ namespace YDemo.Controllers
 
         /// 更新 movie.
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCustomer(int id, Movie movie)
+        public IHttpActionResult PutMovies(int id, Movie movie)
         {
             if (!ModelState.IsValid)
             {
@@ -63,11 +74,13 @@ namespace YDemo.Controllers
                 return BadRequest();
             }
 
-            db.Entry(movie).State = EntityState.Modified;
-
+            //db.Entry(movie).State = EntityState.Modified;
+            repo.Update(movie);
+            
             try
             {
-                db.SaveChanges();
+                //db.SaveChanges();
+                repo.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -88,18 +101,21 @@ namespace YDemo.Controllers
 
         /// 新增 movie
         [ResponseType(typeof(Movie))]
-        public IHttpActionResult PostCustomer(Movie movie)
+        public IHttpActionResult PostMovies(Movie movie)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Movies.Add(movie);
+            //db.Movies.Add(movie);
+            repo.Create(movie);
+            
 
             try
             {
-                db.SaveChanges();
+                //db.SaveChanges();
+                repo.SaveChanges();
             }
             catch (DbUpdateException)
             {
@@ -119,32 +135,26 @@ namespace YDemo.Controllers
 
         /// 刪除 movie.
         [ResponseType(typeof(Movie))]
-        public IHttpActionResult DeleteCustomer(string id)
+        public IHttpActionResult DeleteMovies(int id)
         {
-            Movie customer = db.Movies.Find(id);
-            if (customer == null)
+            Movie movies = repo.Read(x => x.ID == id);
+            if (movies == null)
             {
                 return NotFound();
             }
 
-            db.Movies.Remove(customer);
-            db.SaveChanges();
+            //db.Movies.Remove(movies);
+            //db.SaveChanges();
+            repo.Delete(movies);
+            repo.SaveChanges();
 
-            return Ok(customer);
+            return Ok(movies);
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         private bool MoviesExists(int id)
         {
-            return db.Movies.Count(e => e.ID == id) > 0;
+            return repo.Reads().Count(e => e.ID == id) > 0;
         }
 
     }
